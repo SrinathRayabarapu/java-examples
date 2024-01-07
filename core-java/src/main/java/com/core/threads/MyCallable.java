@@ -1,0 +1,11 @@
+package com.core.threads;
+
+import java.util.concurrent.Callable;
+
+public class MyCallable implements Callable {
+
+    @Override
+    public Object call() throws Exception {
+        return "Hello Callable!";
+    }
+}

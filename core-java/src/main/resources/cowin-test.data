@@ -1,0 +1,158 @@
+{
+  "centers": [
+    {
+      "center_id": 246796,
+      "name": "Koraluru Mallasandra PHC",
+      "address": "Koraluru Mallasandra PHCHosakote Taluk Bangalore Rural",
+      "state_name": "Karnataka",
+      "district_name": "Bangalore Rural",
+      "block_name": "Hosakote",
+      "pincode": 560067,
+      "lat": 13,
+      "long": 77,
+      "from": "09:00:00",
+      "to": "18:00:00",
+      "fee_type": "Free",
+      "sessions": [
+        {
+          "session_id": "93e10822-1ffe-4723-9175-f9c89a0f015d",
+          "date": "28-05-2021",
+          "available_capacity": 0,
+          "min_age_limit": 45,
+          "vaccine": "COVISHIELD",
+          "slots": [
+            "09:00AM-11:00AM",
+            "11:00AM-01:00PM",
+            "01:00PM-03:00PM",
+            "03:00PM-06:00PM"
+          ],
+          "available_capacity_dose1": 0,
+          "available_capacity_dose2": 0
+        },
+        {
+          "session_id": "87e7d3a2-c179-4b7a-a6f4-1c7dcf4bf2c2",
+          "date": "29-05-2021",
+          "available_capacity": 0,
+          "min_age_limit": 45,
+          "vaccine": "COVISHIELD",
+          "slots": [
+            "09:00AM-11:00AM",
+            "11:00AM-01:00PM",
+            "01:00PM-03:00PM",
+            "03:00PM-06:00PM"
+          ],
+          "available_capacity_dose1": 0,
+          "available_capacity_dose2": 0
+        },
+        {
+          "session_id": "e5d9c605-3869-42d1-9e52-f024b03ca0fa",
+          "date": "30-05-2021",
+          "available_capacity": 0,
+          "min_age_limit": 45,
+          "vaccine": "COVISHIELD",
+          "slots": [
+            "09:00AM-11:00AM",
+            "11:00AM-01:00PM",
+            "01:00PM-03:00PM",
+            "03:00PM-06:00PM"
+          ],
+          "available_capacity_dose1": 0,
+          "available_capacity_dose2": 0
+        }
+      ]
+    },
+    {
+      "center_id": 406939,
+      "name": "Government School Kadugodi",
+      "address": "Government School Kadugodi Railway Station Kadugodi",
+      "state_name": "Karnataka",
+      "district_name": "BBMP",
+      "block_name": "Mahadevapura",
+      "pincode": 560067,
+      "lat": 12,
+      "long": 77,
+      "from": "10:00:00",
+      "to": "16:00:00",
+      "fee_type": "Free",
+      "sessions": [
+        {
+          "session_id": "37bb870b-2d3c-43ad-9d8d-0a29610da145",
+          "date": "28-05-2021",
+          "available_capacity": 0,
+          "min_age_limit": 45,
+          "vaccine": "COVISHIELD",
+          "slots": [
+            "10:00AM-11:00AM",
+            "11:00AM-12:00PM",
+            "12:00PM-01:00PM",
+            "01:00PM-04:00PM"
+          ],
+          "available_capacity_dose1": 0,
+          "available_capacity_dose2": 0
+        }
+      ]
+    },
+    {
+      "center_id": 683329,
+      "name": "Kadugodi UPHC COVAXIN",
+      "address": "Opp Whitefield Railway Station Kadugodi",
+      "state_name": "Karnataka",
+      "district_name": "BBMP",
+      "block_name": "Mahadevapura",
+      "pincode": 560067,
+      "lat": 12,
+      "long": 77,
+      "from": "11:00:00",
+      "to": "16:00:00",
+      "fee_type": "Free",
+      "sessions": [
+        {
+          "session_id": "b70d8dc4-c4fd-4fbd-94f0-596b67c1f5ce",
+          "date": "28-05-2021",
+          "available_capacity": 0,
+          "min_age_limit": 45,
+          "vaccine": "COVAXIN",
+          "slots": [
+            "11:00AM-12:00PM",
+            "12:00PM-01:00PM",
+            "01:00PM-02:00PM",
+            "02:00PM-04:00PM"
+          ],
+          "available_capacity_dose1": 0,
+          "available_capacity_dose2": 0
+        }
+      ]
+    },
+    {
+      "center_id": 662048,
+      "name": "KANNAMANGALA Sub Centre",
+      "address": "KANNAMANGALA Sub Centre",
+      "state_name": "Karnataka",
+      "district_name": "Bangalore Urban",
+      "block_name": "Bengaluru East",
+      "pincode": 560067,
+      "lat": 13,
+      "long": 77,
+      "from": "10:00:00",
+      "to": "16:00:00",
+      "fee_type": "Free",
+      "sessions": [
+        {
+          "session_id": "c111b62f-cab5-4e1f-8dbf-037e67101293",
+          "date": "28-05-2021",
+          "available_capacity": 10,
+          "min_age_limit": 18,
+          "vaccine": "COVISHIELD",
+          "slots": [
+            "10:00AM-11:00AM",
+            "11:00AM-12:00PM",
+            "12:00PM-01:00PM",
+            "01:00PM-04:00PM"
+          ],
+          "available_capacity_dose1": 5,
+          "available_capacity_dose2": 5
+        }
+      ]
+    }
+  ]
+}

@@ -1,0 +1,10 @@
+This
+text
+is
+from
+InputFile.txt
+will
+be
+copied
+to
+OutputFile.txt

@@ -1,0 +1,12 @@
+Zimbabwe:23
+Zimbabwe:127
+India:3
+India:71
+Australia:31
+India:22
+Zimbabwe:81
+Pakistan:81
+Pakistan:23
+Pakistan:127
+a:2
+a:99
