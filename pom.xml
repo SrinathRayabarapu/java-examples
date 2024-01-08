@@ -21,6 +21,7 @@
         <module>proj_qrcode</module>
         <module>proj_mockito</module>
         <module>reactor</module>
+        <module>resilience4j</module>
     </modules>
 
     <properties>
