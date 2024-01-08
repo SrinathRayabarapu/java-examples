@@ -22,6 +22,7 @@
         <module>proj_mockito</module>
         <module>reactor</module>
         <module>resilience4j</module>
+        <module>rx-java</module>
     </modules>
 
     <properties>
