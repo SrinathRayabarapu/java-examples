@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<configuration>
+
+	<!-- Send log messages to JavaTest.log -->
+	<appender name="JavaTestLog" class="ch.qos.logback.core.rolling.RollingFileAppender">
+		<file>logs/JavaTest.log</file>
+		<encoder>
+			<pattern>%-5level %d{MM/dd HH:mm:ss.SSS} [%thread] %logger{10} %msg%n
+			</pattern>
+		</encoder>
+
+		<rollingPolicy class="ch.qos.logback.core.rolling.FixedWindowRollingPolicy">
+			<fileNamePattern>logs/JavaTest.%i.log
+			</fileNamePattern>
+			<minIndex>1</minIndex>
+			<maxIndex>5</maxIndex>
+		</rollingPolicy>
+
+		<triggeringPolicy class="ch.qos.logback.core.rolling.SizeBasedTriggeringPolicy">
+			<maxFileSize>10MB</maxFileSize>
+		</triggeringPolicy>
+	</appender>
+	
+	<!-- Send log messages to System.out -->
+    <appender name="STDOUT" class="ch.qos.logback.core.ConsoleAppender">
+        <encoder>
+			<pattern>[%logger{5}.%M] %-5level - %m%n</pattern>
+        </encoder>
+    </appender>
+    
+	<!--
+	<logger name="com" level="DEBUG" additivity="false">
+		<appender-ref ref="STDOUT" />
+	</logger>
+	-->
+
+	<!-- TRACE, DEBUG, INFO, WARN, ERROR, FATAL -->
+	<root level="DEBUG">
+        <appender-ref ref="STDOUT" />
+    </root>
+	
+</configuration>
