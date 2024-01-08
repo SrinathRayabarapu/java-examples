@@ -19,6 +19,8 @@
         <module>ds-algo</module>
         <module>lld</module>
         <module>proj_qrcode</module>
+        <module>proj_mockito</module>
+        <module>reactor</module>
     </modules>
 
     <properties>
