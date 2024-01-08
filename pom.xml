@@ -15,6 +15,7 @@
         <module>util</module>
         <module>proj_pdf</module>
         <module>data-layer</module>
+        <module>design-patterns</module>
     </modules>
 
     <properties>
