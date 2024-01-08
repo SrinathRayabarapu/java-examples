@@ -14,6 +14,7 @@
         <module>core-java</module>
         <module>util</module>
         <module>proj_pdf</module>
+        <module>data-layer</module>
     </modules>
 
     <properties>

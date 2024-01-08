@@ -1,0 +1,36 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-configuration PUBLIC "-//Hibernate/Hibernate Configuration DTD 3.0//EN" "http://hibernate.sourceforge.net/hibernate-configuration-3.0.dtd">
+<hibernate-configuration>
+	
+	<session-factory>
+		<property name="hibernate.connection.username">srinath</property>
+		<property name="hibernate.connection.password">password</property>
+		<property name="hibernate.connection.url">jdbc:mysql://bg-tradex-dev:3306/hibernate_practice?useSSL=false</property>
+		<property name="hibernate.connection.driver_class">com.mysql.jdbc.Driver</property>
+		<property name="hibernate.dialect">org.hibernate.dialect.MySQLDialect</property>
+ 		<property name="hibernate.archive.autodetection">class,hbm</property>
+
+        <property name="hibernate.show_sql">true</property>
+
+        <!-- Disable the second level cache -->
+        <property name="cache.provider_class">org.hibernate.cache.NoCacheProvider</property>
+
+		<property name="hibernate.current_session_context_class">thread</property>
+
+        <!-- Drop and re-create the databse schema on startup - possible values (create, create-drop, validate, update) -->
+        <property name="hibernate.hbm2ddl.auto">update</property>
+
+        <mapping class="com.hibernate.entities.User"/>
+        <mapping class="com.hibernate.entities.Vehicle"/>
+        <mapping class="com.hibernate.entities.Event"/>
+		<mapping class="com.hibernate.entities.Location"/>
+		<mapping class="com.hibernate.entities.Speaker"/>
+		<mapping class="com.hibernate.entities.Attendee"/>
+		<mapping class="com.hibernate.entities.Course" />
+		<mapping class="com.hibernate.entities.Student" />
+		<mapping class="com.hibernate.entities.StudentAddress" />
+		<mapping class="com.hibernate.entities.EventDetails"/>
+
+	</session-factory>
+	
+</hibernate-configuration>
