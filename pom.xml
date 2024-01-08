@@ -17,6 +17,7 @@
         <module>data-layer</module>
         <module>design-patterns</module>
         <module>ds-algo</module>
+        <module>lld</module>
     </modules>
 
     <properties>
