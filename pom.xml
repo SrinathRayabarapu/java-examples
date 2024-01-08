@@ -13,6 +13,7 @@
     <modules>
         <module>core-java</module>
         <module>util</module>
+        <module>proj_pdf</module>
     </modules>
 
     <properties>
