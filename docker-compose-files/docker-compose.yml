@@ -1,4 +1,4 @@
-## To run docker PostGres db instance, please use below commands
+## To run docker PostGres db instance, please follow below commands
 
 ## To start the docker container
 # docker-compose up -d
