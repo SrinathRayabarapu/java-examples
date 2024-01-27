@@ -54,11 +54,17 @@ public class TraversalsMain {
 		log.info("----- In Order -----");
 		inOrderRecursive(root);
 
+		inOrderIterative(root);
+
 		log.info("----- Pre Order -----");
 		preOrderRecursive(root);
 
+		preOrderIterative(root);
+
 		log.info("----- Post Order -----");
 		postOrderRecursive(root);
+
+		postOrderIterative(root);
 
 	}
 
@@ -138,45 +144,45 @@ public class TraversalsMain {
 		}
 	}
 
-	static void inOrderIterative(Node root){
-		Stack<Node> stack = new Stack<>();
+	static void inOrderIterative(TreeNode root){
+		Stack<TreeNode> stack = new Stack<>();
 
-		Node current = root;
+		TreeNode current = root;
 
 		while (current != null || !stack.isEmpty()){
 
 			while (current != null){
 				stack.push(current);
-				current = current.left;
+				current = current.leftChild;
 			}
 
 			current = stack.pop();
-			System.out.print(current.value +" ");
-			current = current.right;
+			System.out.print(current.data +" ");
+			current = current.rightChild;
 		}
 	}
 
-	private static void postOrderIterative(Node root) {
-		Stack<Node> stack1 = new Stack<>();
-		Stack<Node> stack2 = new Stack<>();
+	private static void postOrderIterative(TreeNode root) {
+		Stack<TreeNode> stack1 = new Stack<>();
+		Stack<TreeNode> stack2 = new Stack<>();
 
 		stack1.push(root);
 
 		while (!stack1.empty()){
-			Node node = stack1.pop();
+			TreeNode node = stack1.pop();
 			stack2.push(node);
 
-			if (node.left != null){
-				stack1.push(node.left);
+			if (node.leftChild != null){
+				stack1.push(node.leftChild);
 			}
 
-			if (node.right != null){
-				stack1.push(node.right);
+			if (node.rightChild != null){
+				stack1.push(node.rightChild);
 			}
 		}
 
 		while (!stack2.empty()){
-			System.out.print(stack2.pop().value + " ");
+			System.out.print(stack2.pop().data + " ");
 		}
 
 	}
