@@ -26,6 +26,13 @@ public class FindMaxMinHeightOfBinaryTreeMain {
 
     }
 
+    static int height(TreeNode root){
+        if(root == null) {
+            return 0;
+        }
+        return Math.max(height(root.leftChild) + 1, height(root.rightChild) + 1);
+    }
+
     private static int findMaxHeightRecursive(TreeNode root) {
 
         if (root == null)

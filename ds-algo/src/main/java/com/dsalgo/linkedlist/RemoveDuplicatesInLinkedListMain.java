@@ -43,14 +43,23 @@ public class RemoveDuplicatesInLinkedListMain {
         System.out.println("Printing original list");
         LinkedListUtil.printLinkedList(head);
 
-        head = removeDuplicatesHashMapApproach1(head);
+        head = removeDuplicatesUsingHashSet(head);
 
         System.out.println("Printing after removing duplicates");
         LinkedListUtil.printLinkedList(head);
 
     }
 
-    private static Node removeDuplicatesHashMapApproach1(Node head) {
+    /**
+     * Faster but uses extra space
+     *
+     * TC: O(n) where n is length of the single linked list
+     * SC: O(n) worst case : all elements of linked list are duplicates
+     *
+     * @param head
+     * @return
+     */
+    private static Node removeDuplicatesUsingHashSet(Node head) {
         Node temp = head;
         Set<Integer> nodesSet = new HashSet<>();
         if (head == null || head.getNext() == null) {
@@ -71,9 +80,11 @@ public class RemoveDuplicatesInLinkedListMain {
     }
 
     /**
+     * Slower but uses constant space
+     *
      * Idea:
-     * 1. Create current, next and prev nodes and assign head to current first.
-     * 2. Have one while loop for current and another for next.
+     * 1. Create current, next and prev nodes and assign head to current
+     * 2. Have a while loop for current and another for next.
      * 3. Use prev node whenever there are duplicates
      * <p>
      * Time complexity : O(n2)
