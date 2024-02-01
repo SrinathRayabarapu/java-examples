@@ -28,7 +28,6 @@
             <artifactId>junit</artifactId>
             <version>4.13.2</version>
         </dependency>
-
         <dependency>
             <groupId>com.sri.java.examples</groupId>
             <artifactId>util</artifactId>

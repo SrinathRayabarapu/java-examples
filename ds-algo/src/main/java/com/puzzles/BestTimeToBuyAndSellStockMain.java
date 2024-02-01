@@ -10,49 +10,29 @@ package com.puzzles;
  */
 public class BestTimeToBuyAndSellStockMain {
 
-    /**
-     * TC: O(n^2) - not good
-     * SC: O(1)
-     *
-     * @param stocksPrices
-     * @return
-     */
-    public static int getMaximumProfit(int[] stocksPrices) {
-
-        int maxProfit = 0;
-        for (int i = 0; i < stocksPrices.length; i++) {
-            for (int j = i; j < stocksPrices.length; j++) {
-                maxProfit = Math.max(maxProfit, stocksPrices[j] - stocksPrices[i]);
-            }
-        }
-
-        return maxProfit;
+    public static void main(String[] args) {
+        int[] input = new int[]{7,1,5,3,6,4};
+        System.out.println(getMaximumProfitGood(input));
     }
 
     /**
      * TC: O(n)
      * SC: O(1)
      *
-     * @param stocksPrices
+     * @param prices
      * @return
      */
-    public static int getMaximumProfitGood(int[] stocksPrices) {
+    public static int getMaximumProfitGood(int[] prices) {
+        int maxProfit = 0;
+        int min = prices[0];
 
-        int leastSeenSoFar = Integer.MAX_VALUE;
-        int overAllProfit = 0;
-        int profitIfSoldToday = 0;
-
-        for (int stocksPrice : stocksPrices) {
-            if (stocksPrice < leastSeenSoFar) {
-                leastSeenSoFar = stocksPrice;
-            }
-            profitIfSoldToday = stocksPrice - leastSeenSoFar;
-            if (overAllProfit < profitIfSoldToday) {
-                overAllProfit = profitIfSoldToday;
-            }
+        for (int price : prices){
+            int curProfit = price - min;
+            maxProfit = Math.max(curProfit, maxProfit);
+            min = Math.min(min, price);
         }
 
-        return overAllProfit;
+        return maxProfit;
     }
 
 }

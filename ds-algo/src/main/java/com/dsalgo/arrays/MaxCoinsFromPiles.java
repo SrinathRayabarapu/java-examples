@@ -5,7 +5,7 @@ import java.util.Arrays;
 /**
  * https://leetcode.com/problems/maximum-number-of-coins-you-can-get/description/
  */
-public class MaxCoins {
+public class MaxCoinsFromPiles {
 
     public static void main(String[] args) {
         int[] input = {2,4,1,2,7,8};
