@@ -20,7 +20,6 @@ public class FindMaxMinHeightOfBinaryTreeMain {
 
         System.out.println("Max height is : " + maxHeight(root));
         System.out.println("Min height is : " + minHeight(root));
-
     }
 
     static int maxHeight(TreeNode root){
