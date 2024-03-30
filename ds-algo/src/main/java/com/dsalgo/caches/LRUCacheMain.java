@@ -44,7 +44,6 @@ public class LRUCacheMain {
         log.info("Value for the key: 3 is {}", cache.get(3)); // returns 30
         log.info("Value for the key: 4 is {}", cache.get(4)); // return 40
 
-
         log.info("-----------------------");
 
 
