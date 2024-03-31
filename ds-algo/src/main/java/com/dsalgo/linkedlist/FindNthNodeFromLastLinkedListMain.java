@@ -34,8 +34,8 @@ public class FindNthNodeFromLastLinkedListMain {
 
         findNthNodeFromLast(n1, 2);
 
-        Object nthNodeFromLastRecursive = findNthNodeFromLastRecursive(n1, 2);
-        System.out.println("Recursive: Found node: " + nthNodeFromLastRecursive);
+//        Object nthNodeFromLastRecursive = findNthNodeFromLastRecursive(n1, 2);
+//        System.out.println("Recursive: Found node: " + nthNodeFromLastRecursive);
 
     }
 
@@ -62,7 +62,16 @@ public class FindNthNodeFromLastLinkedListMain {
         return data;
     }
 
+    /**
+     * TC: O(n)
+     * SC: O(1)
+     *
+     * @param n1
+     * @param n
+     */
     private static void findNthNodeFromLast(Node n1, int n) {
+        int nPos = n;
+
         Node slow = n1;
         Node fast = n1;
 
@@ -77,7 +86,7 @@ public class FindNthNodeFromLastLinkedListMain {
             fast = fast.getNext();
         }
 
-        System.out.println("Loop: Found node : " + slow);
+        System.out.println(nPos + " position node is : " + slow);
     }
 
 }

@@ -87,8 +87,8 @@ public class RemoveDuplicatesInLinkedListMain {
      * 2. Have a while loop for current and another for next.
      * 3. Use prev node whenever there are duplicates
      * <p>
-     * Time complexity : O(n2)
-     * Space complexity : O(1)
+     * Time complexity: O(n2)
+     * Space complexity: O(1)
      *
      * @param head
      * @return
