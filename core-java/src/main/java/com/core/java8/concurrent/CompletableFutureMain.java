@@ -24,7 +24,6 @@ public class CompletableFutureMain {
             e.printStackTrace();
         }
 
-
         runAsync();
 
         runSupplyAsync();

@@ -47,8 +47,7 @@ public class CloneScenariosMain {
 		
 		System.out.println("child3Sheep : " + child3Sheep); //child is blue 
 		System.out.println("Mother : " + motherSheep);// mother is still black - deep copy here as well
-		
-		
-	} //main ends
+
+	}
 	
 }
