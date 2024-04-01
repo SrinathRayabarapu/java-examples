@@ -9,7 +9,7 @@ package com.dsalgo.linkedlist;
  * 3. Move slow and fast now one place at a time till fast reaches end
  * 3. slow is at nth position!
  *
- * @author Srinath.Rayabarapu
+ * @author srinath.rayabarapu
  */
 public class FindNthNodeFromLastLinkedListMain {
 

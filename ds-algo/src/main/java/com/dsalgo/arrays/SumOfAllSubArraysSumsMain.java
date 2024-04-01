@@ -11,8 +11,8 @@ public class SumOfAllSubArraysSumsMain {
         int sum = findSumWorst(arr);
         log.info("Sum : {}", sum);
 
-        int sum2 = findSumGood(arr);
-        log.info("Sum : {}", sum);
+        long sum2 = findSumGood(arr);
+        log.info("Sum : {}", sum2);
     }
 
     /**
@@ -22,10 +22,11 @@ public class SumOfAllSubArraysSumsMain {
      * @param arr
      * @return
      */
-    private static int findSumGood(int[] arr) {
-        int totalSum = 0;
+    private static long findSumGood(int[] arr) {
+        long totalSum = 0;
         for (int i = 0; i < arr.length; i++) {
-            totalSum = (i + 1) * (arr.length - i) * arr[i];
+            totalSum += arr[i] * (long)(i + 1) * (arr.length - i);
+            // element * it's left positions * it's right positions
             // (i+1) is the number of times i position can start
             //(n-i) is the number of times i position can end
         }

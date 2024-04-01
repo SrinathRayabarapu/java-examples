@@ -11,8 +11,8 @@ import java.util.Arrays;
 public class SubArrayOfLeastAverage {
 
     public static void main(String[] args) {
-        int[] array = {3, 7, 90, 20, 10, 50, 40};
-        int k = 3;
+        int[] array = {3, 7, 5, 20, -10, 0, 12};
+        int k = 2;
         int index = new SubArrayOfLeastAverage().findIndexOfLeastAverageSubArray(array, k);
         log.info("Index: {}", index);
     }
@@ -27,37 +27,20 @@ public class SubArrayOfLeastAverage {
      */
     public int findIndexOfLeastAverageSubArray(int[] array, int subArraySize) {
 
-        int[] prefixArray = new int[array.length];
+        int sum = 0;
+        // find subArraySize array sum
+        sum = Arrays.stream(array).limit(subArraySize).sum();
 
-        prefixArray[0] = array[0];
-
-        for (int i = 1; i < array.length; i++) {
-            prefixArray[i] = array[i] + prefixArray[i-1];
-        }
-        log.info(Arrays.toString(prefixArray));
-
-
-        int startIndex = 0;
-        int endIndex = startIndex + subArraySize-1;
-
-        int leastAverage = Integer.MAX_VALUE;
+        System.out.println("sum = " + sum);
+        int min_sum = sum;
         int returnIndex = 0;
 
-        while (endIndex < array.length) {
-            int average = 0;
-            if(startIndex == 0){
-                average = prefixArray[endIndex] / subArraySize;
-            } else {
-                average = (prefixArray[endIndex] - prefixArray[startIndex-1]) / subArraySize;
+        for (int i = subArraySize; i < array.length; i++) {
+            sum = sum - array[i-subArraySize] + array[i];
+            if(sum < min_sum){
+                returnIndex = i-subArraySize+1;
+                min_sum = sum;
             }
-
-            if(average <= leastAverage){
-                leastAverage = average;
-                returnIndex = startIndex;
-            }
-
-            startIndex++;
-            endIndex++;
         }
 
         return returnIndex;

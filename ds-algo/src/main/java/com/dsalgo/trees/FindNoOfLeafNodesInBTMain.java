@@ -2,8 +2,11 @@ package com.dsalgo.trees;
 
 import lombok.extern.slf4j.Slf4j;
 
+/**
+ * given a binary tree, find no. of leaf nodes
+ */
 @Slf4j
-public class FindNoOfLeafNodesInBSTMain {
+public class FindNoOfLeafNodesInBTMain {
 
     public static void main(String[] args) {
         TreeNode root = TreeUtil.create9NodesTree();

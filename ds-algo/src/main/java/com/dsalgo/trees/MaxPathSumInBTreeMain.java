@@ -10,6 +10,13 @@ public class MaxPathSumInBTreeMain {
         System.out.println("Max path sum : " + maxPath(root));
     }
 
+    /**
+     * TC: O(n) - since we are visiting each and every node
+     * SC: O(n) - sine we are tracking all the elements in an internal call stack
+     *
+     * @param root
+     * @return
+     */
     private static int maxPath(TreeNode root) {
         if(root == null){
             return 0;
