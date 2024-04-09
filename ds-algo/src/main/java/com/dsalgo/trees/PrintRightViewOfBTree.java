@@ -9,7 +9,7 @@ import java.util.List;
  * TC: O(n)
  * SC: O(n)
  */
-public class PrintRightViewOfBSTMain {
+public class PrintRightViewOfBTree {
 
     public static void main(String[] args) {
 

@@ -36,53 +36,35 @@ public class DeleteNodeInLinkedListMain {
 //        deleteNode(n1, n4);
 
         System.out.println("\nDeleting node with index " + 3);
-        deleteNode(n1, 3);
+        n1 = deleteNode(n1, 3);
 
         System.out.println("Printing list after node deletion: ");
         printList(n1);
 
     }
 
-    public static void deleteNode(Node n1, Node deleteNode) {
+    public static Node deleteNode(Node n1, int index) {
+
+        // if index is 0 then return next node
+        if(index == 0){
+            return n1.getNext();
+        }
 
         Node head = n1;
         Node previous = null;
+        int counter = 0;
 
         while(head != null) {
-            if(head.getData().equals(deleteNode.getData())){
-                if(deleteNode.getNext() != null && previous != null){
-                    previous.setNext(deleteNode.getNext());
-                } else {
-                    if(previous != null) {
-                        previous.setNext(null);
-                    }
-                }
+            // if the index is found, then skip that node
+            if(counter == index) {
+                previous.setNext(previous.getNext().getNext());
             }
             previous = head;
             head = head.getNext();
+            counter++;
         }
-    }
 
-    public static void deleteNode(Node n1, int index) {
-
-        Node head = n1;
-        Node previous = null;
-        int count = 0;
-
-        while(head != null) {
-            if(count == index) {
-                if(head.getNext() != null && previous != null){
-                    previous.setNext(head.getNext());
-                } else {
-                    if(previous != null) {
-                        previous.setNext(null);
-                    }
-                }
-            }
-            previous = head;
-            head = head.getNext();
-            count++;
-        }
+        return n1;
     }
 
 
