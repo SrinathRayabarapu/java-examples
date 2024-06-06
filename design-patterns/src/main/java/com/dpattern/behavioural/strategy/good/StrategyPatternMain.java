@@ -3,7 +3,12 @@ package com.dpattern.behavioural.strategy.good;
 import lombok.extern.slf4j.Slf4j;
 
 /**
- * Changing the object behaviour at runtime
+ * Changing the object behavior at runtime.
+ *
+ * 1. Create an Interface and have a common doOperation method
+ * 2. Create a Context class which has this Interface and calls doOperation method
+ * 3. Create bunch of concrete classes which implements Interface and implements behavior.
+ * 4. At runtime you can pass in different concrete classes and see the behavior is different
  *
  * Ref: https://www.youtube.com/watch?v=-y5gssAvE7E
  */

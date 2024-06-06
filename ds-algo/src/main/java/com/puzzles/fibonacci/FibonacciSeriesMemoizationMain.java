@@ -38,7 +38,7 @@ public class FibonacciSeriesMemoizationMain {
 		System.out.println(calculateCachedFibinocciNumber);
 
 		startingTime = clock.millis();
-		calculateCachedFibinocciNumber = new FibonacciSeriesIterativeMain().fibinocciNumberWithIteration(input);
+		calculateCachedFibinocciNumber = new FibonacciSeriesTabulationMain().fibinocciNumberWithTabulation(input);
 		endingTime = clock.millis();
 		System.out.println("Simple Loop - Total time in millis : " + (endingTime-startingTime));
 		System.out.println(calculateCachedFibinocciNumber);

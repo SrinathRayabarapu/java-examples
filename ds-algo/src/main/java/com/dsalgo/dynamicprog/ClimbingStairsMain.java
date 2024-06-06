@@ -1,4 +1,4 @@
-package com.puzzles;
+package com.dsalgo.dynamicprog;
 
 /**
  * given the number of staircases and steps that you can take, find out the number of ways that you
@@ -8,9 +8,10 @@ package com.puzzles;
  * Count ways to reach the n'th stair
  * https://www.geeksforgeeks.org/count-ways-reach-nth-stair/
  *
+ * <Fibinocci series problem>
  * @author Srinath.Rayabarapu
  */
-public class StaircaseStepsMain {
+public class ClimbingStairsMain {
 
     public static void main(String[] args) {
 
@@ -22,12 +23,12 @@ public class StaircaseStepsMain {
         System.out.println(ways);
 
         // using memoization
-        ways = recursiveMemo(staircaseSteps, new int[staircaseSteps + 1]);
+        ways = recursiveMemoization(staircaseSteps, new int[staircaseSteps + 1]);
         System.out.println(ways);
 
     }
 
-    private static int recursiveMemo(int staircaseSteps, int[] memo) {
+    private static int recursiveMemoization(int staircaseSteps, int[] memo) {
         if (staircaseSteps < 0) {
             return 0;
         } else if (staircaseSteps == 0) {

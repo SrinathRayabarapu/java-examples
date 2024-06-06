@@ -9,26 +9,27 @@ import java.math.BigInteger;
  * 
  * @author Srinath.Rayabarapu
  */
-public class FibonacciSeriesIterativeMain {
+public class FibonacciSeriesTabulationMain {
 	
 	public static void main(String[] args) {
 		for(int i=1; i<=15; i++){
-			System.out.print(fibinocciNumberWithIteration(i)+" ");
+			System.out.print(fibinocciNumberWithTabulation(i)+" ");
 		}
 	}
 
-	public static BigInteger fibinocciNumberWithIteration(int num) {
+	public static BigInteger fibinocciNumberWithTabulation(int num) {
 
-		if(num <= 2){
+		if(num <= 2) {
 			return BigInteger.ONE;
 		}
 
-		BigInteger temp1 = BigInteger.ONE, temp2 = BigInteger.ONE;
+		BigInteger prev2 = BigInteger.ONE, prev1 = BigInteger.ONE;
 		BigInteger fibinocci = BigInteger.ZERO;
 		for(int i=3; i<=num; i++){
-			fibinocci = temp1.add(temp2);
-			temp1 = temp2;
-			temp2 = fibinocci;
+			fibinocci = prev2.add(prev1);
+			prev2 = prev1;
+			prev1 = fibinocci;
+			System.out.println(fibinocci);
 		}
 		return fibinocci;
 	}

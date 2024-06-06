@@ -1,7 +1,9 @@
 package com.dsalgo.hashing;
 
 import java.util.HashMap;
+import java.util.HashSet;
 import java.util.Map;
+import java.util.Set;
 
 /**
  * given an array, check whether a pair (i, j) exists such that i != j and arr[i] + arr[j] = k
@@ -12,7 +14,7 @@ public class CheckAPairExistsMain {
         int[] arr = {8, 9, 1, -2, 4, 5, 11};
         int k = 20;
 
-        boolean exists = checkPairExists(arr, k);
+        boolean exists = checkPairExists1(arr, k);
         System.out.println("exists = " + exists);
     }
 
@@ -38,4 +40,17 @@ public class CheckAPairExistsMain {
         return false;
     }
 
+    private static boolean checkPairExists1(int[] arr, int k) {
+        Set<Integer> set = new HashSet<>();
+
+        for (int j : arr) {
+            if (set.contains(k - j)) {
+                return true;
+            } else {
+                set.add(j);
+            }
+        }
+
+        return false;
+    }
 }
