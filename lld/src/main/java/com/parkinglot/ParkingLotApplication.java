@@ -10,8 +10,18 @@ import com.parkinglot.model.ParkingAttendant;
 import com.parkinglot.model.Vehicle;
 import com.parkinglot.model.VehicleType;
 import com.parkinglot.services.EntryGateService;
+import lombok.extern.slf4j.Slf4j;
 
+/**
+ * ParkingLotApplication is the main entry point for the parking lot system.
+ * It initializes the system by creating a vehicle, parking attendant,
+ * entry gate, and entry gate service.
+ * It then generates a parking ticket for the vehicle
+ * using the ticket controller.
+ */
+@Slf4j
 public class ParkingLotApplication {
+
     public static void main(String[] args) {
 
         Vehicle suv = Vehicle.builder().vehicleType(VehicleType.CAR).registrationNumber("2322").build();
@@ -26,9 +36,9 @@ public class ParkingLotApplication {
 
         try {
             GenerateTicketResponse response = controller.generateTicket(GenerateTicketRequest.builder().vehicle(suv).gate(entryGate).build());
-            System.out.println(response.getTicket());
+            log.info("Ticket response : {}", response.getTicket());
         } catch (GateNotFoundException | VehicleNotFoundException e) {
-            throw new RuntimeException(e);
+            log.error("Error generating ticket: {}", e.getMessage());
         }
     }
 

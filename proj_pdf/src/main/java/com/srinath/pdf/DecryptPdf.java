@@ -10,10 +10,11 @@ import java.io.IOException;
 public class DecryptPdf {
 
     public static void main(String[] args) throws IOException {
-        String basePath = "/Users/srinath.rayabarapu/Desktop/Home Loans/SBI-Naveen/My-Docs/7. ITR";
-        PDDocument pd = PDDocument.load(new File(basePath + "/AY_2022-23_ITR_csbps6004b28121985.pdf"), "csbps6004b28121985");
+        String basePath = "/Users/srinath.rayabarapu/Desktop/";
+        PDDocument pd = PDDocument.load(new File(basePath + "EAadhaar_0221013910026020250322163245_25032025112437.pdf")
+                , "HITH2020");
         pd.setAllSecurityToBeRemoved(true);
-        pd.save(basePath + "/AY_2022-23_ITR_csbps6004b28121985-Decrypted.pdf");
+        pd.save(basePath + "/Hitharsh.SR-Aadhar.pdf");
         log.info("Decrypted pdf file successfully!");
     }
 }

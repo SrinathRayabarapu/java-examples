@@ -11,18 +11,18 @@ import java.io.IOException;
 public class MergePdf {
     public static void main(String[] args) throws IOException {
 
-        String basePath = "/Users/srinath.rayabarapu/My Drive/Travel Docs/Office/Travel Tickets/26-2_01-03_23/Bills";
+        String basePath = "/Users/srinath.rayabarapu/Desktop";
 
         // loading all the pdf files we wish to merge
-        File file1 = new File(basePath + "/CarBill-6-1.pdf");
-        File file2 = new File(basePath + "/CarBill-6-2.pdf");
+        File file1 = new File(basePath + "/PME-Bill.pdf");
+        File file2 = new File(basePath + "/Doctor-Advice.pdf");
 //        File file3 = new File(basePath + "/BLR_Airport-Home2.pdf");
 
         // Instantiating PDFMergerUtility class
         PDFMergerUtility obj = new PDFMergerUtility();
 
         // Setting the destination file path
-        obj.setDestinationFileName(basePath + "/CarBill-6-All.pdf");
+        obj.setDestinationFileName(basePath + "/PME-All-Docs.pdf");
 
         // Add all source files, to be merged
         obj.addSource(file1);

@@ -1,7 +1,11 @@
 package com.swings;
 
 import javax.swing.*;
-import java.awt.event.*;
+import java.awt.event.ActionEvent;
+import java.awt.event.ActionListener;
+import java.awt.event.KeyEvent;
+import java.awt.event.WindowAdapter;
+import java.awt.event.WindowEvent;
 
 /**
  * TODO: make a calculator
@@ -48,11 +52,13 @@ public class MyDialogMain extends JDialog {
 
     private void onOK() {
         // add your code here
+        System.out.println("Ok clicked!");
         dispose();
     }
 
     private void onCancel() {
         // add your code here if necessary
+        System.out.println("Cancel clicked!");
         dispose();
     }
 
