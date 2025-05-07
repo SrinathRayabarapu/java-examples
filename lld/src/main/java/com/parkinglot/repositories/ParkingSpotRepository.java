@@ -9,7 +9,7 @@ import java.util.List;
 
 public class ParkingSpotRepository {
 
-    private List<ParkingSpot> parkingSpots = new ArrayList<>();
+    private final List<ParkingSpot> parkingSpots = new ArrayList<>();
 
     public ParkingSpotRepository() {
         initializeParkingSpots();

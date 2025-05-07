@@ -9,9 +9,8 @@ import java.util.Objects;
 
 public class EntryGateService {
 
-    private SlotAllocationService slotAllocationService = new SlotAllocationService();
-
-    private TicketService ticketService = new TicketService();
+    private final SlotAllocationService slotAllocationService = new SlotAllocationService();
+    private final TicketService ticketService = new TicketService();
 
     public Ticket createTicket(Gate gate, Vehicle vehicle) {
         ParkingSpot parkingSpot = slotAllocationService.findSpot(vehicle.getVehicleType());

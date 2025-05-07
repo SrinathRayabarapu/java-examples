@@ -6,7 +6,7 @@ import com.parkinglot.repositories.ParkingSpotRepository;
 
 public class SlotAllocationService {
 
-    private ParkingSpotRepository parkingSpotRepository = new ParkingSpotRepository();
+    private final ParkingSpotRepository parkingSpotRepository = new ParkingSpotRepository();
 
     public ParkingSpot findSpot(VehicleType vehicleType) {
         return parkingSpotRepository.findAvailableParkingSpot(vehicleType);

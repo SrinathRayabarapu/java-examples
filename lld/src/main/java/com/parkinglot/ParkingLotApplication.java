@@ -26,7 +26,7 @@ public class ParkingLotApplication {
 
         Vehicle suv = Vehicle.builder().vehicleType(VehicleType.CAR).registrationNumber("2322").build();
 
-        ParkingAttendant pa = ParkingAttendant.builder().email("abc@gmail.com").name("abc").build();
+        ParkingAttendant pa = ParkingAttendant.builder().name("Srinath").email("srinath@gmail.com").build();
 
         Gate entryGate = Gate.builder().gateNumber(1).parkingAttendant(pa).build();
 

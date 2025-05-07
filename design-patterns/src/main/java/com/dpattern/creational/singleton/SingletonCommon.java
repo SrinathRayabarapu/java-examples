@@ -10,29 +10,29 @@ import java.io.Serializable;
  */
 @Slf4j
 public class SingletonCommon implements Serializable, Cloneable {
-	private static SingletonCommon singletonCommon = null;
 
-	//private constructor methods will only be called by class loader
-	private SingletonCommon(){
-		if(singletonCommon != null){
-			// this avoids to create instance thru Reflection
-			throw new RuntimeErrorException(null,
-					"Can not create a new instance, please call getInstance() method");
-		}
-		log.info("Creating..");
-	}
+    private static SingletonCommon singletonCommon = null;
 
-	//only global point of access
-	public static SingletonCommon getInstance(){
-		if(singletonCommon == null){
-			singletonCommon = new SingletonCommon(); //lazy approach
-		}
-		return singletonCommon;
-	}
+    //private constructor methods will only be called by class loader
+    private SingletonCommon() {
+        if (singletonCommon != null) {
+            // this avoids to create instance thru Reflection
+            throw new RuntimeErrorException(null, "Can not create a new instance, please call getInstance() method");
+        }
+        log.info("Creating..");
+    }
 
-	@Override
-	public Object clone() throws CloneNotSupportedException {
-		return super.clone();
-	}
+    //only global point of access
+    public static SingletonCommon getInstance() {
+        if (singletonCommon == null) {
+            singletonCommon = new SingletonCommon(); //lazy approach
+        }
+        return singletonCommon;
+    }
+
+    @Override
+    public Object clone() throws CloneNotSupportedException {
+        return super.clone();
+    }
 
 }

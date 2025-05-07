@@ -3,14 +3,14 @@ package com.dpattern.creational.singleton;
 import lombok.extern.slf4j.Slf4j;
 
 /**
- * -> One of the Gangs of Four Design patterns
+ * -> One of the Gangs of Four Design patterns <-
  *
- * -> SingletonCommon pattern restricts the instantiation of a class and ensures that only one instance of the
+ * SingletonCommon pattern restricts the instantiation of a class and ensures that only one instance of the
  * class exists in the java virtual machine. The singleton class must provide a global access point to get 
  * the instance of the class. SingletonCommon pattern is used for logging, drivers objects, caching and thread pool.
- * 
- * Ex: default implementations like java.lang.Runtime, java.awt.Desktop
- *
+ * <p>
+ * Practical usecases: Cache, DB Connection, Logger, Configuration Manager, Thread Pool, Device drivers etc.
+ * <p>
  * https://www.geeksforgeeks.org/prevent-singleton-pattern-reflection-serialization-cloning/
  * 
  * @author Srinath.Rayabarapu

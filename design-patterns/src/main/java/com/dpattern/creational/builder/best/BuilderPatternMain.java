@@ -1,10 +1,16 @@
-package com.dpattern.creational.builder.lombokstyle;
+package com.dpattern.creational.builder.best;
 
 import lombok.ToString;
+import lombok.extern.slf4j.Slf4j;
 
 /**
- * this is how lombok implemented builder pattern
+ * Builder pattern is used to create complex objects. It is a creational design pattern.
+ * Builder pattern is a design pattern that allows you to create complex objects step by step. It is a creational design pattern.
+ * <p>
+ * Practical examples: Creating Immutable objects, StringBuilder, StringBuffer, StringJoiner, StringTokenizer
+ *
  */
+@Slf4j
 public class BuilderPatternMain {
 
     public static void main(String[] args) {
@@ -14,7 +20,7 @@ public class BuilderPatternMain {
                 .setQualification("MCA")
                 .build();
 
-        System.out.println("Student obj : " + student);
+        log.info("Student obj : {}", student);
     }
 
 }
@@ -22,11 +28,9 @@ public class BuilderPatternMain {
 @ToString
 class Student {
 
-    private String studentName;
-
-    private String qualification;
-
-    private String address;
+    private final String studentName;
+    private final String qualification;
+    private final String address;
 
     private Student(StudentBuilder builder) {
         this.studentName = builder.studentName;
@@ -41,9 +45,7 @@ class Student {
     public static class StudentBuilder {
 
         private String studentName;
-
         private String qualification;
-
         private String address;
 
         public StudentBuilder setStudentName(String studentName) {

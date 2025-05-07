@@ -7,6 +7,7 @@ import com.parkinglot.model.Vehicle;
 import com.parkinglot.repositories.TicketRepository;
 
 import java.util.Date;
+import java.util.Random;
 
 public class TicketService {
 
@@ -15,7 +16,7 @@ public class TicketService {
     public Ticket createTicket(Vehicle vehicle, Gate gate, ParkingSpot parkingSpot) {
 
         Ticket ticket = Ticket.builder()
-                .id(String.valueOf(Math.random()))
+                .id(String.valueOf(new Random().nextInt(10000)))
                 .entryTime(new Date())
                 .issuingGate(gate)
                 .parkingAttendant(gate.getParkingAttendant())

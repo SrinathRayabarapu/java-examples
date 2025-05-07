@@ -11,7 +11,7 @@ import java.util.Objects;
 
 public class TicketController {
 
-    private EntryGateService entryGateService;
+    private final EntryGateService entryGateService;
 
     public TicketController(EntryGateService entryGateService) {
         this.entryGateService = entryGateService;
