@@ -2,6 +2,7 @@ package com.advanced.applets;
 
 /*1.	An integer is said to be a perfect if its factors, including 1 but not the number itself add up to the number. (Ex 6 = 1+2+3). Write an applet with a method in it called Perfect that determines if the parameter number is a perfect number. Use this applet that determines and displays all the perfect numbers between 1 and 1000. Print the factors of each perfect number to confirm the number is indeed perfect. Challenge the computing power of your computes by testing numbers larger than 1000. */
 
+/*
 import java.applet.Applet;
 import java.awt.*;
 
@@ -46,6 +47,7 @@ public class PerfectIntegers extends Applet {
 
 	}
 }
+ */
 /*
  * <applet code="PerfectIntegers.class" width=900 height=800> <param name="num"
  * value="6"> </applet>

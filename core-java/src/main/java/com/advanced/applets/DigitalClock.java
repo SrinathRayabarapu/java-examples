@@ -1,3 +1,4 @@
+/*
 package com.advanced.applets;
 
 import java.applet.Applet;
@@ -37,4 +38,4 @@ public class DigitalClock extends Applet implements Runnable {
 			;
 		}
 	}
-}
+}*/
