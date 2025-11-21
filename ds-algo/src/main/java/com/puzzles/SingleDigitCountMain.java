@@ -22,10 +22,7 @@ public class SingleDigitCountMain {
             return 0;
         }
         long multi = getMulti(n);
-        while (multi/10 != 0){
-            multi = persistence(multi);
-        }
-        return 1;
+        return 1 + persistence(multi);
     }
 
     private static long getMulti(long n) {
