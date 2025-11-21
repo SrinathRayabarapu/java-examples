@@ -82,14 +82,14 @@ class FluxServicesTest {
                 .verifyComplete();
     }
 
-/*    @Test
+    @Test
     void fruitsVeggiesFluxMerge() {
         Flux<String> fruitsVeggiesFlux = fluxServices.fruitsVeggiesFluxMerge();
         StepVerifier.create(fruitsVeggiesFlux)
                 .expectNext("Mango", "Tomato", "Banana", "Cucumber")
 //                .expectNextCount(4)
                 .verifyComplete();
-    }*/
+    }
 
     @Test
     void fruitsVeggiesFluxMergeSequential() {

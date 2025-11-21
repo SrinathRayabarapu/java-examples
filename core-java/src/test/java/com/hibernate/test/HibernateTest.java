@@ -1,10 +1,26 @@
 package com.hibernate.test;
 
+import com.hibernate.entities.User;
+import com.hibernate.entities.Vehicle;
+import com.hibernate.util.HibernateUtil;
+import org.hibernate.Session;
+import org.junit.After;
+import org.junit.AfterClass;
+import org.junit.Before;
+import org.junit.BeforeClass;
+import org.junit.Test;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
+
+import java.util.List;
+
+import static org.junit.Assert.assertNotNull;
+import static org.junit.Assert.assertTrue;
+
 /**
  * Test class for Hibernate functionality
  */
 public class HibernateTest {
-	/*
 	private final static Logger LOG = LoggerFactory.getLogger(HibernateTest.class);
 	private static Session currentSession;
 	
@@ -40,12 +56,6 @@ public class HibernateTest {
 	
 	@Test
 	public void testBSaveUsers() {
-		
-		*//*
-		user1.getAddressesSet().add(new StudentAddress("street1", "city1", "state1", "pincode1"));
-		user1.getAddressesSet().add(new StudentAddress("street2", "city2", "state2", "pincode2"));
-		user2.setOfficeAddress(new StudentAddress("street2", "city2", "state2", "pincode2"));
-		*//*
 		user1.setVehicle(vehicle);
 		currentSession.save(user1);
 		
@@ -59,9 +69,9 @@ public class HibernateTest {
 		//LOG.info("Users list Size is : {}", list.size());
 	}
 	
-	//@Test
+	@Test
+	@SuppressWarnings("unchecked")
 	public void testCDeleteUsers() {
-		
 		currentSession.delete(user1);
 		currentSession.delete(user2);
 		
@@ -70,5 +80,4 @@ public class HibernateTest {
 		
 		assertTrue("Users were not deleted!", list.size() == 0);		
 	}
-	*/
 }

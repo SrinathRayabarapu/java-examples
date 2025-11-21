@@ -59,6 +59,16 @@
             <artifactId>util</artifactId>
             <version>${project.parent.version}</version>
         </dependency>
+        <dependency>
+            <groupId>com.sri.java.examples</groupId>
+            <artifactId>ds-algo</artifactId>
+            <version>${project.parent.version}</version>
+        </dependency>
+        <dependency>
+            <groupId>com.sri.java.examples</groupId>
+            <artifactId>data-layer</artifactId>
+            <version>${project.parent.version}</version>
+        </dependency>
     </dependencies>
 
 </project>
