@@ -3,26 +3,52 @@ package com.dsalgo.divideandconquer;
 import lombok.extern.slf4j.Slf4j;
 
 /**
- * Problem: Calculate x raised to the power n (x^n) using Divide and Conquer
+ * Demonstrates the Power of a Number calculation using Divide and Conquer strategy.
  * 
- * Interview Question: Implement pow(x, n) which calculates x raised to the power n
+ * <h3>Problem Statement:</h3>
+ * <p>Implement pow(x, n) which calculates x raised to the power n (x^n).</p>
  * 
- * Approach:
- * - Divide: Split the problem into smaller subproblems
- * - Conquer: Solve the subproblems recursively
- * - Combine: Combine the results
+ * <h3>Divide and Conquer Approach:</h3>
+ * <ol>
+ *   <li><b>Divide</b>: Split the problem - calculate x^(n/2)</li>
+ *   <li><b>Conquer</b>: Recursively solve the smaller subproblems</li>
+ *   <li><b>Combine</b>: Combine results based on whether n is even or odd</li>
+ * </ol>
  * 
- * Key Insight: x^n = x^(n/2) * x^(n/2) if n is even
- *              x^n = x^(n/2) * x^(n/2) * x if n is odd
+ * <h3>Key Mathematical Insight:</h3>
+ * <ul>
+ *   <li>If n is even: x^n = x^(n/2) × x^(n/2) = (x^(n/2))²</li>
+ *   <li>If n is odd: x^n = x^(n/2) × x^(n/2) × x = (x^(n/2))² × x</li>
+ * </ul>
  * 
- * Time Complexity: O(log n)
- * Space Complexity: O(log n) due to recursion stack
+ * <h3>Complexity Analysis:</h3>
+ * <table border="1">
+ *   <tr><th>Metric</th><th>Recursive</th><th>Iterative</th></tr>
+ *   <tr><td>Time Complexity</td><td>O(log n)</td><td>O(log n)</td></tr>
+ *   <tr><td>Space Complexity</td><td>O(log n)</td><td>O(1)</td></tr>
+ * </table>
+ * 
+ * <h3>Edge Cases Handled:</h3>
+ * <ul>
+ *   <li>Negative exponents: x^(-n) = 1/(x^n)</li>
+ *   <li>Zero exponent: x^0 = 1</li>
+ *   <li>Base of 0 or 1</li>
+ * </ul>
+ * 
+ * <h3>LeetCode Reference:</h3>
+ * <p>Problem #50 - Pow(x, n)</p>
  * 
  * @author srayabar
+ * @see <a href="https://leetcode.com/problems/powx-n/">LeetCode #50</a>
  */
 @Slf4j
 public class PowerOfNumberMain {
     
+    /**
+     * Main method demonstrating power calculation with various test cases.
+     *
+     * @param args command-line arguments (not used)
+     */
     public static void main(String[] args) {
         // Test cases
         log.info("2^10 = {}", power(2, 10));
@@ -53,7 +79,13 @@ public class PowerOfNumberMain {
     }
     
     /**
-     * Helper method for recursive calculation
+     * Helper method that performs the recursive power calculation.
+     * 
+     * <p>This method assumes n is non-negative (negative case is handled by the public method).</p>
+     *
+     * @param x the base value
+     * @param n the non-negative exponent
+     * @return x raised to the power n
      */
     private static double powerHelper(double x, int n) {
         // Base case

@@ -9,9 +9,38 @@ import java.util.List;
 import java.util.Random;
 import java.util.function.Function;
 
+/**
+ * Service class demonstrating various Flux operations in Project Reactor.
+ * 
+ * <p>Flux represents an asynchronous sequence of 0 to N elements, and this class
+ * provides examples of common operations performed on Flux streams.</p>
+ * 
+ * <h3>Operations Covered:</h3>
+ * <ul>
+ *   <li><b>Transformation</b> - map, flatMap, concatMap, transform</li>
+ *   <li><b>Combining</b> - concat, merge, mergeSequential, zip</li>
+ *   <li><b>Error Handling</b> - onErrorReturn, onErrorContinue, onErrorMap</li>
+ *   <li><b>Lifecycle</b> - doOnNext, doOnSubscribe, doOnComplete</li>
+ *   <li><b>Empty Handling</b> - defaultIfEmpty, switchIfEmpty</li>
+ * </ul>
+ * 
+ * <h3>Key Differences:</h3>
+ * <ul>
+ *   <li><b>flatMap vs concatMap</b> - flatMap is async (unordered), concatMap preserves order</li>
+ *   <li><b>concat vs merge</b> - concat is sequential, merge is async/interleaved</li>
+ * </ul>
+ * 
+ * @author Srinath.Rayabarapu
+ * @see Flux
+ */
 @Slf4j
 public class FluxServices {
 
+    /**
+     * Creates a simple Flux from a list of fruit names.
+     *
+     * @return Flux emitting fruit names
+     */
     public Flux<String> fruitsFlux() {
         return Flux.fromIterable(List.of("Banana", "Orange", "Apple", "Chikoo", "Mango")).log();
     }

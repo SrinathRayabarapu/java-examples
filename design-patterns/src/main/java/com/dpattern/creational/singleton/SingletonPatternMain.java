@@ -3,21 +3,60 @@ package com.dpattern.creational.singleton;
 import lombok.extern.slf4j.Slf4j;
 
 /**
- * -> One of the Gangs of Four Design patterns <-
- *
- * SingletonCommon pattern restricts the instantiation of a class and ensures that only one instance of the
- * class exists in the java virtual machine. The singleton class must provide a global access point to get 
- * the instance of the class. SingletonCommon pattern is used for logging, drivers objects, caching and thread pool.
- * <p>
- * Practical usecases: Cache, DB Connection, Logger, Configuration Manager, Thread Pool, Device drivers etc.
- * <p>
- * https://www.geeksforgeeks.org/prevent-singleton-pattern-reflection-serialization-cloning/
+ * Demonstrates the Singleton Design Pattern - one of the Gang of Four (GoF) Creational patterns.
+ * 
+ * <p>The Singleton pattern restricts instantiation of a class to a single instance and provides
+ * a global access point to that instance. This is useful when exactly one object is needed
+ * to coordinate actions across the system.</p>
+ * 
+ * <h3>Key Characteristics:</h3>
+ * <ul>
+ *   <li>Private constructor to prevent direct instantiation</li>
+ *   <li>Private static instance variable</li>
+ *   <li>Public static method to get the instance</li>
+ * </ul>
+ * 
+ * <h3>Common Use Cases:</h3>
+ * <ul>
+ *   <li><b>Logging</b> - Single logger instance across application</li>
+ *   <li><b>Configuration</b> - Application-wide settings</li>
+ *   <li><b>Connection Pools</b> - Database connection management</li>
+ *   <li><b>Thread Pools</b> - Shared thread execution service</li>
+ *   <li><b>Caching</b> - Centralized cache management</li>
+ *   <li><b>Device Drivers</b> - Hardware access coordination</li>
+ * </ul>
+ * 
+ * <h3>Implementations Demonstrated:</h3>
+ * <ul>
+ *   <li>{@link SingletonCommon} - Basic lazy initialization (not thread-safe)</li>
+ *   <li>{@link SingletonEager} - Eager initialization (thread-safe)</li>
+ *   <li>{@link BillPughSinglePattern} - Inner class holder (recommended, thread-safe)</li>
+ * </ul>
+ * 
+ * <h3>Thread Safety Considerations:</h3>
+ * <p>Naive implementations are not thread-safe. Solutions include:</p>
+ * <ul>
+ *   <li>Eager initialization</li>
+ *   <li>Synchronized getInstance() method</li>
+ *   <li>Double-checked locking with volatile</li>
+ *   <li>Bill Pugh's inner class holder pattern</li>
+ *   <li>Enum-based singleton (most robust)</li>
+ * </ul>
  * 
  * @author Srinath.Rayabarapu
+ * @see SingletonCommon
+ * @see SingletonEager
+ * @see BillPughSinglePattern
  */
 @Slf4j
 public class SingletonPatternMain {
 
+	/**
+	 * Demonstrates different Singleton implementations and verifies
+	 * that multiple calls return the same instance.
+	 *
+	 * @param args command-line arguments (not used)
+	 */
 	public static void main(String[] args) {
 		
 		SingletonCommon s1 = SingletonCommon.getInstance();
