@@ -7,13 +7,39 @@ import java.util.Map;
 import java.util.Random;
 
 /**
- * practice on HashMap
+ * Demonstrates HashMap behavior and concurrency issues in Java.
+ * 
+ * <p>HashMap is a widely used implementation of the Map interface that stores
+ * key-value pairs. This class explores various HashMap operations and highlights
+ * important concurrency considerations.</p>
+ * 
+ * <h3>Key Characteristics of HashMap:</h3>
+ * <ul>
+ *   <li>Allows one null key and multiple null values</li>
+ *   <li>Not synchronized (not thread-safe)</li>
+ *   <li>Provides O(1) average time complexity for get/put operations</li>
+ *   <li>Initial capacity and load factor affect performance</li>
+ * </ul>
+ * 
+ * <h3>Concurrency Issues Demonstrated:</h3>
+ * <ul>
+ *   <li>ConcurrentModificationException when iterating and modifying simultaneously</li>
+ *   <li>Race conditions with multiple threads accessing the same HashMap</li>
+ *   <li>Solutions: ConcurrentHashMap, Collections.synchronizedMap()</li>
+ * </ul>
  *
  * @author Srinath.Rayabarapu
+ * @see java.util.HashMap
+ * @see java.util.concurrent.ConcurrentHashMap
  */
 @Slf4j
 public class HashMapMain {
 
+	/**
+	 * Main method demonstrating HashMap operations and concurrency scenarios.
+	 *
+	 * @param args command-line arguments (not used)
+	 */
 	public static void main(String[] args) {
 
 		testMultiThreadHashMapModifications();
@@ -47,6 +73,21 @@ public class HashMapMain {
 
 	}
 
+	/**
+	 * Demonstrates the dangers of modifying a HashMap from multiple threads.
+	 * 
+	 * <p>This method creates two threads:</p>
+	 * <ul>
+	 *   <li>Thread 1: Continuously puts new entries into the map</li>
+	 *   <li>Thread 2: Continuously iterates over the map's keySet</li>
+	 * </ul>
+	 * 
+	 * <p>This scenario typically causes a {@link java.util.ConcurrentModificationException}
+	 * because HashMap's iterators are fail-fast. To avoid this, use ConcurrentHashMap
+	 * or synchronize access to the map.</p>
+	 * 
+	 * <p><b>Warning:</b> This method runs indefinitely and may throw exceptions.</p>
+	 */
 	public static void testMultiThreadHashMapModifications(){
 		Map<Integer, Integer> map = new HashMap<>();
 

@@ -8,12 +8,48 @@ import java.util.stream.Collectors;
 import java.util.stream.Stream;
 
 /**
- * It's not about How - It's just What!
+ * Demonstrates Java 8 Stream API features and operations.
+ * 
+ * <p>The Stream API provides a declarative approach to data processing,
+ * focusing on "what" to do rather than "how" to do it. This class covers:</p>
+ * 
+ * <ul>
+ *   <li>Creating streams from collections and arrays</li>
+ *   <li>Intermediate operations: filter, map, sorted, flatMap</li>
+ *   <li>Terminal operations: forEach, collect, findFirst, anyMatch, noneMatch</li>
+ *   <li>Specialized streams: IntStream, mapping between stream types</li>
+ *   <li>Aggregation operations: max, min, average</li>
+ *   <li>Reusing streams with Supplier</li>
+ * </ul>
+ * 
+ * <p>Key concepts demonstrated:</p>
+ * <ul>
+ *   <li>Streams are lazily evaluated - intermediate operations don't execute until a terminal operation is invoked</li>
+ *   <li>Streams can only be consumed once - attempting to reuse throws IllegalStateException</li>
+ *   <li>Use Supplier to create reusable stream pipelines</li>
+ *   <li>flatMap is used to flatten nested collections into a single stream</li>
+ * </ul>
  *
  * @author Srinath.Rayabarapu
+ * @see java.util.stream.Stream
+ * @see java.util.stream.Collectors
  */
 public class StreamsMain {
 
+    /**
+     * Main method demonstrating various Stream API operations.
+     * 
+     * <p>Examples include:</p>
+     * <ul>
+     *   <li>Filtering, mapping, and sorting strings</li>
+     *   <li>Finding first element with Optional</li>
+     *   <li>Working with IntStream for numeric operations</li>
+     *   <li>Finding max/min elements with Comparator</li>
+     *   <li>Using flatMap to flatten nested collections</li>
+     * </ul>
+     *
+     * @param args command-line arguments (not used)
+     */
     public static void main(String[] args) {
 
         Arrays.asList("abc", "def", "ghi", "ayx").

@@ -7,8 +7,52 @@ import org.apache.pdfbox.multipdf.PDFMergerUtility;
 import java.io.File;
 import java.io.IOException;
 
+/**
+ * Utility class for merging multiple PDF files into a single document.
+ * 
+ * <p>This class uses Apache PDFBox library's {@link PDFMergerUtility} to combine
+ * PDF documents while preserving their content, formatting, and structure.</p>
+ * 
+ * <h3>Features:</h3>
+ * <ul>
+ *   <li>Merge any number of PDF files</li>
+ *   <li>Preserve original document formatting</li>
+ *   <li>Configurable memory usage settings</li>
+ *   <li>Support for large documents via temp file mode</li>
+ * </ul>
+ * 
+ * <h3>Memory Considerations:</h3>
+ * <p>For large PDFs, consider using:</p>
+ * <ul>
+ *   <li>{@code MemoryUsageSetting.setupTempFileOnly()} - For very large files</li>
+ *   <li>{@code MemoryUsageSetting.setupMixed(threshold)} - Balanced approach</li>
+ * </ul>
+ * 
+ * <h3>Usage:</h3>
+ * <pre>{@code
+ * PDFMergerUtility merger = new PDFMergerUtility();
+ * merger.addSource(new File("doc1.pdf"));
+ * merger.addSource(new File("doc2.pdf"));
+ * merger.setDestinationFileName("merged.pdf");
+ * merger.mergeDocuments(MemoryUsageSetting.setupMainMemoryOnly());
+ * }</pre>
+ * 
+ * @author Srinath.Rayabarapu
+ * @see PDFMergerUtility
+ * @see MemoryUsageSetting
+ */
 @Slf4j
 public class MergePdf {
+    
+    /**
+     * Main method demonstrating PDF merging functionality.
+     * 
+     * <p><b>Note:</b> Update the file paths to point to actual PDF files
+     * on your system before running.</p>
+     *
+     * @param args command-line arguments (not used)
+     * @throws IOException if file reading or writing fails
+     */
     public static void main(String[] args) throws IOException {
 
         String basePath = "/Users/srinath.rayabarapu/Desktop";

@@ -1,22 +1,58 @@
 package com.dpattern.behavioural.observer.ex1;
 
 /**
- * It's a behaviour pattern - Observer1 design pattern is based on communicating changes in state of object to observers
- * so that they can take there action.
- * <p>
- * http://www.tutorialspoint.com/design_pattern/observer_pattern.htm.
- * <p>
- * Idea: Subject class has a state variable and list of Observer1 classes. Observer1 is an abstract class which has Subject
- * reference and an update method. Whenever a subject is passed to TestObserver classes they will be calling that subject
- * attach() method. Later when a subject setStatus() method is called, it will call notifyObjects() method which will call
- * internally update() method of each TestObserver class to which this Subject reference is passed.
- * <p>
- * Hence each status change will notify all the Observers
+ * Demonstrates the Observer Design Pattern - one of the Gang of Four (GoF) Behavioral patterns.
+ * 
+ * <p>The Observer pattern defines a one-to-many dependency between objects so that when one
+ * object (the Subject) changes state, all its dependents (Observers) are notified and updated
+ * automatically. Also known as Publish-Subscribe pattern.</p>
+ * 
+ * <h3>Pattern Structure:</h3>
+ * <ul>
+ *   <li><b>Subject</b> ({@link Subject}) - Maintains a list of observers and notifies them of state changes</li>
+ *   <li><b>Observer</b> ({@link Observer}) - Abstract class defining the update interface</li>
+ *   <li><b>Concrete Observers</b> ({@link Observer1}, {@link Observer2}, {@link Observer3}) - React to subject's state changes</li>
+ * </ul>
+ * 
+ * <h3>How It Works:</h3>
+ * <ol>
+ *   <li>Observer registers with Subject via {@code attach()} method</li>
+ *   <li>Subject's state changes via {@code setState()}</li>
+ *   <li>Subject calls {@code notifyAllObservers()}</li>
+ *   <li>Each Observer's {@code update()} method is invoked</li>
+ *   <li>Observers pull the new state from Subject</li>
+ * </ol>
+ * 
+ * <h3>Real-World Examples:</h3>
+ * <ul>
+ *   <li>Event listeners in GUI frameworks</li>
+ *   <li>Newsletter subscriptions</li>
+ *   <li>Stock price updates</li>
+ *   <li>MVC architecture (View observes Model)</li>
+ *   <li>Social media notifications</li>
+ * </ul>
+ * 
+ * <h3>Benefits:</h3>
+ * <ul>
+ *   <li>Loose coupling between Subject and Observers</li>
+ *   <li>Support for broadcast communication</li>
+ *   <li>Dynamic relationship establishment</li>
+ * </ul>
  *
  * @author Srinath.Rayabarapu
+ * @see Subject
+ * @see Observer
  */
 public class ObserverPatternMain {
 
+    /**
+     * Demonstrates the Observer pattern with a Subject and multiple Observers.
+     * 
+     * <p>Shows that observers are only notified after they are attached to the subject,
+     * and subsequent state changes trigger updates to all registered observers.</p>
+     *
+     * @param args command-line arguments (not used)
+     */
     public static void main(String[] args) {
 
         //the one that changes it's state
